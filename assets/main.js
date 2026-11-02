@@ -18,6 +18,21 @@
   };
   tick(); setInterval(tick, 15000);
 
+  /* ---------- light / dark theme (light by default) ---------- */
+  const themeBtn = document.querySelector('.theme-btn');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const applyTheme = (t) => {
+    if (t === 'dark') root.dataset.theme = 'dark'; else delete root.dataset.theme;
+    themeBtn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+    themeMeta.setAttribute('content', t === 'dark' ? '#0a0a0c' : '#f4f1ea');
+  };
+  applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+  themeBtn.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    try { localStorage.setItem('df-theme', next); } catch (e) {}
+  });
+
   /* ---------- Industry / Academic mode ---------- */
   const setMode = (mode) => {
     body.dataset.mode = mode;
