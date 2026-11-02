@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dolapo Falana · Software & AI Engineer</title>
+  <meta name="description" content="Dolapo James Falana: software engineer who ships AI into real products, built for places where infrastructure is weak. Mobile, fintech, applied ML.">
+  <meta name="theme-color" content="#0b0c0f">
+  <meta property="og:title" content="Dolapo Falana · Software & AI Engineer">
+  <meta property="og:description" content="Mobile and fintech engineer building AI that works offline, on real devices, in low-resource settings.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dolappo.github.io/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0c0f'/%3E%3Ctext x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='monospace' font-size='28' font-weight='700' fill='%23f2b84b'%3EDF%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-mode="industry">
+  <!-- cursor + spotlight (desktop only, disabled for reduced motion) -->
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#top" class="logo magnetic" aria-label="Back to top">DF<span>.</span></a>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="mode-switch" role="group" aria-label="Choose what to highlight">
+      <button type="button" data-set-mode="industry" aria-pressed="true">Industry</button>
+      <button type="button" data-set-mode="academic" aria-pressed="false">Academic</button>
+      <span class="mode-pill" aria-hidden="true"></span>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <p class="eyebrow mono"><span class="pulse"></span> Nigeria · Open to MSc research (Fall 2027) &amp; engineering roles</p>
+      <h1>
+        <span class="line">Dolapo Falana</span>
+        <span class="line muted">builds software that works</span>
+        <span class="line">where infrastructure <em>doesn't.</em></span>
+      </h1>
+      <p class="lede only-industry">
+        Software engineer with 4+ years shipping production mobile and fintech products: banking apps,
+        a 100K+ download utility, offline-first field tools. Founder of DearTechBro. Led frontend and mobile at NadaPay.
+        Now bringing applied AI into the products people actually carry: their phones.
+      </p>
+      <p class="lede only-academic">
+        Computer science graduate (B.Tech, FUTA, CGPA 4.22/5.00) and production engineer, seeking a research MSc
+        in machine learning. I'm interested in AI that runs on real devices and in low-resource settings:
+        efficient on-device vision, low-resource African-language NLP, and trustworthy ML for health and finance.
+      </p>
+      <div class="cta">
+        <a class="btn primary magnetic" href="#work">See the work</a>
+        <a class="btn magnetic only-academic" href="#research">Research interests</a>
+        <a class="btn magnetic only-industry" href="#experience">Experience</a>
+        <a class="btn ghost magnetic" href="https://github.com/Dolappo" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+
+      <dl class="stats">
+        <div><dt>4+ yrs</dt><dd>shipping production software</dd></div>
+        <div><dt>100K+</dt><dd>downloads on an app I re-engineered</dd></div>
+        <div><dt>−40%</dt><dd>app launch time</dd></div>
+        <div><dt>2×</dt><dd>BLEU on Hausa→English MT (5.88 → 11.85)</dd></div>
+      </dl>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section id="work" class="section">
+      <div class="section-head">
+        <span class="mono idx">01</span>
+        <h2>Selected work</h2>
+        <p class="sub">Products and experiments, each with what changed because of it.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card glow" data-tags="ml nlp">
+          <div class="card-top"><span class="tag">Research · NLP</span><span class="mono date">2024</span></div>
+          <h3>Hausa → English neural machine translation</h3>
+          <p class="metric"><b>BLEU 5.88 → 11.85</b> after cleaning the corpus</p>
+          <p>Final-year project (grade A). Fine-tuned a MarianMT model (Helsinki-NLP opus-mt-ha-en) for a low-resource African language. Most of the gain came from the data: I cleaned a noisy 4,735-pair parallel corpus down to 3,284 reliable pairs, then trained for 10 epochs on an Apple M1.</p>
+          <ul class="chips"><li>PyTorch</li><li>Transformers</li><li>MarianMT</li><li>Low-resource NLP</li></ul>
+          <a class="link" href="https://github.com/Dolappo/eng_to_hausa_mlt" target="_blank" rel="noopener">Code ↗</a>
+        </article>
+
+        <article class="card glow">
+          <div class="card-top"><span class="tag">Product · GIS</span><span class="mono date">2025</span></div>
+          <h3>Offline-first farmland mapping for field teams</h3>
+          <p class="metric"><b>Manual mapping → in-app</b>, working without signal</p>
+          <p>At EcoGIS I built a mobile app on the ArcGIS SDK that lets field teams walk and record farmland boundaries, replacing manual mapping. Fields have poor connectivity, so data is captured offline and syncs when a connection returns.</p>
+          <ul class="chips"><li>ArcGIS SDK</li><li>Mobile</li><li>Offline sync</li><li>Geospatial</li></ul>
+        </article>
+
+        <article class="card glow">
+          <div class="card-top"><span class="tag">Product · Performance</span><span class="mono date">2023–25</span></div>
+          <h3>Re-engineering a 100K+ download utility app</h3>
+          <p class="metric"><b>−40% launch time · −70% store complaints</b></p>
+          <p>At Codefixbug I migrated a large Flutter/Kotlin codebase to null safety and reworked its architecture. Users felt it straight away: faster start-up and far fewer Play Store complaints.</p>
+          <ul class="chips"><li>Flutter</li><li>Kotlin</li><li>Architecture</li></ul>
+        </article>
+
+        <article class="card glow">
+          <div class="card-top"><span class="tag">Research · Health ML</span></div>
+          <h3>Explainable heart-disease risk prediction</h3>
+          <p class="metric"><b>ROC AUC 0.94 · accuracy 0.902</b></p>
+          <p>Compared Random Forest and XGBoost on the UCI heart-disease data, then used SHAP to show which factors drive each prediction, because a clinician won't trust a model they can't question.</p>
+          <ul class="chips"><li>scikit-learn</li><li>XGBoost</li><li>SHAP</li><li>Interpretability</li></ul>
+          <a class="link" href="https://github.com/Dolappo/Heart-Disease-Risk-Prediction" target="_blank" rel="noopener">Code ↗</a>
+        </article>
+
+        <article class="card glow">
+          <div class="card-top"><span class="tag">Product · Fintech</span><span class="mono date">2023–now</span></div>
+          <h3>Production banking apps</h3>
+          <p class="metric"><b>Thousands</b> of retail &amp; corporate customers</p>
+          <p>At Value Driver Technology Solutions I build and maintain mobile banking apps end to end: authentication and security, transactions, payments and account management, plus the architecture, integrations, testing and performance work behind them.</p>
+          <ul class="chips"><li>Mobile</li><li>Security</li><li>Payments</li><li>Testing</li></ul>
+        </article>
+
+        <article class="card glow">
+          <div class="card-top"><span class="tag">Product · Mobility</span><span class="mono date">2022–23</span></div>
+          <h3>Ride-hailing app with in-app wallet</h3>
+          <p class="metric"><b>Rider + driver apps</b>, maps and payments</p>
+          <p>Co-built a two-sided ride-hailing product at Milade T&amp;L: Google Maps navigation, a Paystack-powered wallet, and real-time messaging between riders and drivers.</p>
+          <ul class="chips"><li>Flutter</li><li>Google Maps</li><li>Paystack</li><li>Firebase</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-head">
+        <span class="mono idx">02</span>
+        <h2>Experience</h2>
+        <p class="sub">Hover (or tap) a role to open it.</p>
+      </div>
+
+      <ol class="xp" role="list">
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Founder</span>
+            <span class="xp-co">DearTechBro</span>
+            <span class="xp-date mono">—</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <p>Founded and lead DearTechBro.</p>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Lead, Frontend &amp; Mobile</span>
+            <span class="xp-co">NadaPay</span>
+            <span class="xp-date mono">—</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <p>Led both frontend and mobile app development for a fintech product.</p>
+            <ul class="chips"><li>Fintech</li><li>Leadership</li><li>Frontend</li><li>Mobile</li></ul>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Mobile Engineer</span>
+            <span class="xp-co">Value Driver Technology Solutions</span>
+            <span class="xp-date mono">2023 – now</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <ul class="bullets">
+              <li>Build production <b>banking apps</b> used by thousands of retail and corporate customers.</li>
+              <li>Own authentication, security, transactions, payments and account management features.</li>
+              <li>Work across architecture, third-party integrations, testing and performance.</li>
+              <li>Joined through industrial training (SIWES, 2022/23) and was retained full-time.</li>
+            </ul>
+            <ul class="chips"><li>Fintech</li><li>Security</li><li>Mobile</li></ul>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Mobile Engineer (contract)</span>
+            <span class="xp-co">EcoGIS</span>
+            <span class="xp-date mono">2025</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <ul class="bullets">
+              <li>Built a <b>farmland-boundary mapping app</b> on the ArcGIS SDK for field teams, replacing manual mapping.</li>
+              <li>Designed <b>offline-first sync</b> for areas with weak or no connectivity.</li>
+            </ul>
+            <ul class="chips"><li>ArcGIS</li><li>Geospatial</li><li>Offline-first</li></ul>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Mobile App Developer</span>
+            <span class="xp-co">Codefixbug</span>
+            <span class="xp-date mono">2023 – 2025</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <ul class="bullets">
+              <li>Re-engineered a <b>100K+ download</b> utility app (Flutter null safety, Kotlin/Flutter architecture).</li>
+              <li>Cut launch time by <b>40%</b> and Play Store complaints by <b>70%</b>.</li>
+            </ul>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Mobile App Developer (contract)</span>
+            <span class="xp-co">Fembol Group</span>
+            <span class="xp-date mono">2024</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <ul class="bullets">
+              <li>Logistics platform: real-time shipment tracking, push notifications and driver-dispatch messaging.</li>
+              <li>Improved app stability by <b>25%</b> using crash analytics.</li>
+            </ul>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Contributor</span>
+            <span class="xp-co">Codie's World</span>
+            <span class="xp-date mono">—</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <p>Worked on Codie's World.</p>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Junior Mobile Developer</span>
+            <span class="xp-co">Milade T&amp;L</span>
+            <span class="xp-date mono">2022 – 2023</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <ul class="bullets">
+              <li>Co-built a ride-hailing product for riders and drivers: Google Maps navigation, Paystack wallet, Firebase Messaging.</li>
+            </ul>
+          </div></div>
+        </li>
+
+        <li class="xp-row" tabindex="0">
+          <div class="xp-head">
+            <span class="xp-role">Junior Mobile Developer</span>
+            <span class="xp-co">Shkula LLC</span>
+            <span class="xp-date mono">2021 – 2022</span>
+            <span class="xp-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="xp-body"><div>
+            <ul class="bullets">
+              <li>School-management apps for parents, admins and teachers, in small teams of 3–4.</li>
+              <li>Teacher app: attendance, continuous-assessment management, gallery (Firestore, streams).</li>
+            </ul>
+          </div></div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section">
+      <div class="section-head">
+        <span class="mono idx">03</span>
+        <h2>Research interests</h2>
+        <p class="sub">Questions I keep running into while shipping products, and want to study properly.</p>
+      </div>
+      <div class="research">
+        <div class="r-item glow">
+          <span class="mono r-n">A</span>
+          <h3>Efficient, on-device vision</h3>
+          <p>How do we make vision models accurate enough to trust and small enough to run on a mid-range phone with no network, for field mapping, agriculture and health?</p>
+        </div>
+        <div class="r-item glow">
+          <span class="mono r-n">B</span>
+          <h3>Low-resource African-language NLP</h3>
+          <p>My Hausa MT work showed that data quality beat model size. I want to study learning from small, noisy corpora for languages like Hausa and Yoruba (my first language).</p>
+        </div>
+        <div class="r-item glow">
+          <span class="mono r-n">C</span>
+          <h3>Trustworthy ML for health &amp; finance</h3>
+          <p>Interpretable, privacy-aware models for decisions people care about, from heart-disease risk to fraud in mobile banking.</p>
+        </div>
+        <div class="r-item glow">
+          <span class="mono r-n">D</span>
+          <h3>Reliable mobile &amp; financial systems</h3>
+          <p>Energy, performance and security of the apps that millions rely on, informed by four years of building them.</p>
+        </div>
+      </div>
+      <p class="note mono">Applying for research MSc programmes starting Fall 2027. If you supervise in these areas, I'd love to hear from you.</p>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="section-head">
+        <span class="mono idx">04</span>
+        <h2>About</h2>
+      </div>
+      <div class="about">
+        <div class="avatar" aria-hidden="true"><span>DF</span></div>
+        <div class="about-text">
+          <p>I'm Dolapo James Falana, a software engineer from Nigeria. I started building mobile apps as a student and have since shipped software for banks, logistics companies, ride-hailing, schools and field teams. I founded DearTechBro and led frontend and mobile development at NadaPay.</p>
+          <p>Most of what I build has to survive weak networks, cheap phones and real money. That's what pulls me toward AI research: making models that work under those constraints, not just in the lab.</p>
+
+          <div class="facts">
+            <div>
+              <h4 class="mono">Education</h4>
+              <p><b>B.Tech Computer Science</b>, Federal University of Technology, Akure (FUTA), 2018–2024<br>CGPA 4.22 / 5.00, Second Class Upper. Final-year project: grade A.</p>
+            </div>
+            <div>
+              <h4 class="mono">Stack</h4>
+              <p>Flutter/Dart · Kotlin · Swift/SwiftUI · Firebase · Supabase · Node.js · MongoDB · ArcGIS SDK<br>Python · PyTorch · TensorFlow · scikit-learn · LangChain</p>
+            </div>
+            <div>
+              <h4 class="mono">Certifications</h4>
+              <p>Computer Vision Specialization, Deep Learning for CV, Modern AI Models for Vision &amp; Multimodal Understanding, Data Mining Pipeline (CU Boulder) · Image Segmentation; Intro to Image Processing (MathWorks) · Systems Architecture; Cloud Native &amp; DevOps (IBM) · Generative AI (Udacity) · Secure Coding</p>
+            </div>
+            <div>
+              <h4 class="mono">Languages</h4>
+              <p>English (fluent) · Yoruba (native) · French (basic)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <span class="mono idx">05</span>
+      <h2 class="big">Let's build something<br>that <em>works</em> out there.</h2>
+      <p class="sub">For roles, collaborations or MSc supervision.</p>
+      <div class="cta">
+        <a class="btn primary magnetic" href="https://github.com/Dolappo" target="_blank" rel="noopener">GitHub ↗</a>
+        <!-- Add when ready:
+        <a class="btn magnetic" href="mailto:YOUR_EMAIL">Email</a>
+        <a class="btn magnetic" href="https://www.linkedin.com/in/YOUR_HANDLE" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn ghost magnetic" href="assets/Dolapo_Falana_CV.pdf">Download CV</a>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot mono">
+    <span>© <span id="yr">2026</span> Dolapo James Falana</span>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="assets/main.js" defer></script>
+</body>
+</html>
