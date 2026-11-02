@@ -214,6 +214,7 @@ body[data-mode="academic"] #research { order: -1; }
 
 /* ============ hero ============ */
 .hero { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 120px; padding-bottom: 70px; position: relative; }
+.hero-role { color: var(--text); flex-basis: 100%; }
 .hero-meta { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; color: var(--muted); margin-bottom: clamp(26px, 4vw, 44px); }
 .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); margin-right: 8px; vertical-align: 1px; animation: pulse 2.4s infinite; }
 @keyframes pulse { 0% { box-shadow: 0 0 0 0 var(--mint); } 70%, 100% { box-shadow: 0 0 0 10px transparent; } }
