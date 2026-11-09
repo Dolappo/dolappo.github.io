@@ -184,7 +184,7 @@
       const open = row.classList.contains('open');
       if (!previewOn) { px = mx; py = my; cx = mx; cy = my; }
       strip.style.transform = `translateY(${-i * 220}px)`;
-      preview.classList.toggle('on', !open);
+      // preview card removed at Dolapo's request; only the small Open/Close chip follows the cursor
       chip.classList.add('on');
       chipLabel.textContent = open ? 'Close' : 'Open';
       body.classList.add('cursor-hidden');
