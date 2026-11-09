@@ -88,7 +88,7 @@
       <div class="hero-foot">
         <p class="lede only-industry">
           Software engineer with 4+ years shipping production mobile and fintech products: banking apps,
-          a 100K+ download utility, offline-first field tools. Founder of DearTechBro and Codie's World. Led frontend and mobile at NadaPay.
+          a 100K+ download utility, offline-first field tools. Founder of DearTechBro and Codie's World. Lead design, frontend and mobile at NadaPay, where I built the checkout and a stablecoin wallet SDK.
           Now bringing applied AI into the devices people actually carry.
         </p>
         <p class="lede only-academic">
@@ -122,6 +122,18 @@
       </div>
 
       <div class="cases">
+        <article class="case">
+          <p class="case-metric"><span>2 SDKs</span><small class="mono">web checkout · Flutter wallet</small></p>
+          <div class="case-body">
+            <p class="case-tag mono">Lead, Design · Frontend &amp; Mobile · Fintech</p>
+            <h3>NadaPay: checkout, embedded wallets and mobile security</h3>
+            <p>At NadaPay I lead design and own frontend and mobile. I built and shipped the payment checkout end to end: an iframe checkout in React/TypeScript, a drop-in inline JS SDK that merchants add with one script tag, and standalone payment and invoice pages, served from S3 and CloudFront. I made the architecture calls behind it: the wallet is the main conversion path, the flow never needs to know which blockchain is underneath, and test or live mode comes from the merchant's API key.</p>
+            <p>I also designed the <b>StableCash Flutter SDK</b>, a multi-tenant plugin that lets other apps offer USDC and cNGN wallets and Visa cards, branded and configured from a dashboard. It is hardened with certificate pinning, secure storage and quote-bound action tokens, and I replaced simple root detection with Play Integrity attestation in a 14-step security pipeline. Next is a claim-link flow so people can send money to phone numbers that aren't registered yet.</p>
+            <ul class="chips"><li>React</li><li>TypeScript</li><li>Flutter</li><li>Stacked · GetIt · Dio</li><li>Play Integrity</li><li>AWS</li></ul>
+          </div>
+          <a class="case-link" href="https://nadapay.io" target="_blank" rel="noopener" aria-label="Visit NadaPay">Visit <i>↗</i></a>
+        </article>
+
         <article class="case has-media">
           <p class="case-metric"><span>4 worlds</span><small class="mono">code · design · words · AI</small></p>
           <div class="case-body">
@@ -255,15 +267,23 @@
           </div></div>
         </li>
 
-        <li class="xp-row" data-kicker="Fintech" data-metric="Led frontend + mobile" data-hue="160">
+        <li class="xp-row" data-kicker="Payments · Stablecoins" data-metric="Checkout, SDKs, mobile security" data-hue="160">
           <button class="xp-head" type="button" aria-expanded="false">
             <span class="xp-co">NadaPay</span>
-            <span class="xp-role">Lead, Frontend &amp; Mobile</span>
+            <span class="xp-role">Lead, Design · Frontend &amp; Mobile</span>
             <span class="xp-date mono"></span>
           </button>
           <div class="xp-body"><div>
-            <p>Led both frontend and mobile app development for a fintech product.</p>
-            <ul class="chips"><li>Fintech</li><li>Leadership</li><li>Frontend</li><li>Mobile</li></ul>
+            <ul class="bullets">
+              <li>Lead the design team and own frontend and mobile, working with a designer and a backend engineer.</li>
+              <li>Built and shipped the <b>checkout infrastructure</b>: the React/TypeScript iframe checkout, the drop-in inline JS SDK, and standalone payment and invoice pages, on S3 + CloudFront. Made the key architecture calls, including wallet-first conversion and a chain-agnostic flow.</li>
+              <li>Designed and built the <b>StableCash Flutter SDK</b>: a multi-tenant plugin that lets other apps embed USDC/cNGN wallets and Visa cards, configured by app owners from a dashboard.</li>
+              <li>Replaced root detection with <b>attestation-bound tokens</b> (Play Integrity API) in a 14-step mobile security pipeline with certificate pinning and scoped tokens.</li>
+              <li>Restructuring the developer docs from ~28 flat guides into 7 product lines (42 pages); handled App Store and Google Play organisation setup and Android signing-key migration.</li>
+            </ul>
+            <ul class="chips"><li>React</li><li>TypeScript</li><li>Flutter</li><li>AWS S3 · CloudFront</li><li>Mobile security</li><li>Leadership</li></ul>
+          </div></div>
+        </li><li>Leadership</li><li>Frontend</li><li>Mobile</li></ul>
           </div></div>
         </li>
 
