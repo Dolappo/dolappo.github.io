@@ -145,7 +145,7 @@
   });
 
   if (fx) {
-    body.classList.add('has-cursor');
+    // normal system cursor (custom round cursor removed at Dolapo's request)
     const ring = document.querySelector('.cursor');
     const dot = document.querySelector('.cursor-dot');
     let mx = innerWidth / 2, my = innerHeight / 2;
@@ -171,7 +171,7 @@
     addEventListener('pointerdown', () => body.classList.add('cursor-down'));
     addEventListener('pointerup', () => body.classList.remove('cursor-down'));
     document.addEventListener('pointerleave', () => body.classList.remove('has-cursor'));
-    document.addEventListener('pointerenter', () => body.classList.add('has-cursor'));
+    
 
     const interactive = 'a, button, .panel, .hw';
     document.addEventListener('pointerover', (e) => {
