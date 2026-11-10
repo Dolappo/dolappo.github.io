@@ -224,6 +224,9 @@ body[data-mode="academic"] #research { order: -1; }
 .hero-title .line > span { display: inline-block; }
 .hero-title em { font-size: 1.08em; letter-spacing: -.02em; }
 .js body:not(.loaded) .hero-title .line > span { transform: translateY(112%); }
+/* safety net: if the script never runs, show the headline anyway after 2.5s */
+.js body:not(.loaded) .hero-title .line > span { animation: hero-failsafe .6s var(--ease-out) 2.5s forwards; }
+@keyframes hero-failsafe { to { transform: none; } }
 body.loaded .hero-title .line > span { transform: none; transition: transform 1.1s var(--ease-out); }
 body.loaded .hero-title .line:nth-child(2) > span { transition-delay: .08s; }
 body.loaded .hero-title .line:nth-child(3) > span { transition-delay: .16s; }
