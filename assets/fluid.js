@@ -9,17 +9,17 @@
 
   const CONFIG = {
     SIM_RESOLUTION: 128,
-    DYE_RESOLUTION: 720,
+    DYE_RESOLUTION: 512,
     DENSITY_DISSIPATION: 0.9,
     VELOCITY_DISSIPATION: 2.6,
     PRESSURE: 0.1,
-    PRESSURE_ITERATIONS: 20,
+    PRESSURE_ITERATIONS: 12,
     CURL: 3,
     SPLAT_RADIUS: 0.22,
     SPLAT_FORCE: 6000,
     COLOR_UPDATE_SPEED: 10,
     INTENSITY: 0.16,
-    IDLE_MS: 7000,
+    IDLE_MS: 4000,
   };
 
   // Hues drawn from the site palette: amber, lilac, mint, coral, sky.
@@ -314,7 +314,7 @@
       pressure = doubleFbo(sim.w, sim.h, fmtR, gl.NEAREST);
     }
 
-    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+    const dpr = 1; // the smoke is soft, so full-res rendering only costs GPU time
     function resizeCanvas() {
       const w = Math.floor(canvas.clientWidth * dpr), h = Math.floor(canvas.clientHeight * dpr);
       if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; return true; }

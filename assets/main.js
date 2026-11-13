@@ -81,12 +81,9 @@
   });
 
   /* ---------- smooth scroll (Lenis) ---------- */
-  let lenis = null;
-  if (fx && window.Lenis) { // touch keeps native scrolling
-    lenis = new window.Lenis({ duration: 1.15, easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)) });
-    const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
-    requestAnimationFrame(raf);
-  }
+  // Removed: smooth-scroll hijacking made scrolling feel stuck on slower machines.
+  // Native scrolling (with CSS scroll-behavior for anchor links) is used instead.
+  const lenis = null;
 
   /* ---------- nav: scrolled state, anchors, mobile drawer ---------- */
   const nav = document.querySelector('.nav');
@@ -154,29 +151,15 @@
 
     addEventListener('pointermove', (e) => {
       mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
     }, { passive: true });
 
-    const loop = () => {
-      rx = lerp(rx, mx, 0.2); ry = lerp(ry, my, 0.2);
-      px = lerp(px, mx, 0.16); py = lerp(py, my, 0.16);
-      cx = lerp(cx, mx, 0.3); cy = lerp(cy, my, 0.3);
-      ring.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
-      preview.style.transform = `translate3d(${px}px, ${py}px, 0)`;
-      chip.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
-      requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
+    // (the per-frame cursor-follow loop was removed along with the custom cursor)
 
     addEventListener('pointerdown', () => body.classList.add('cursor-down'));
     addEventListener('pointerup', () => body.classList.remove('cursor-down'));
     document.addEventListener('pointerleave', () => body.classList.remove('has-cursor'));
     
 
-    const interactive = 'a, button, .panel, .hw';
-    document.addEventListener('pointerover', (e) => {
-      body.classList.toggle('cursor-hover', !!e.target.closest(interactive));
-    });
 
     // experience hover preview
     const showPreview = (row) => {
